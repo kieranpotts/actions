@@ -1,0 +1,40 @@
+= Change string case
+
+This action accepts any string, and outputs three different versions of it, which are accessible via the job's `outputs` context:
+
+* lowercase (`XyZzY` → `xyzzy`)
+* uppercase (`XyZzY` → `XYZZY`)
+* capitalized (`XyZzY` → `Xyzzy`)
+
+This action is a fork of link:https://github.com/ASzc/change-string-case-action/[Alex Szczuczko's change-string-case-action].
+
+== Inputs
+
+* `string` (required): The string you want manipulated.
+
+== Outputs
+
+* `lowercase`: `inputStr.toLowerCase()`, eg `XyZzY` → `xyzzy`
+* `uppercase`: `inputStr.toUpperCase()`, eg `XyZzY` → `XYZZY`
+* `capitalized`: `inputStr.charAt(0).toUpperCase() + inputStr.slice(1).toLowerCase()`, eg `XyZzY` -> `Xyzzy`
+
+== Usage
+
+[source,yaml]
+----
+name: Capitalize string
+
+on: [push]
+
+jobs:
+  capitalize:
+    name: Capitalize
+    runs-on: ubuntu-latest
+    steps:
+      - id: capitalization
+        uses: kieranpotts/actions/change-string-case@dev
+        with:
+          input: INPUT VALUE TO CAPITALIZE
+      - id: output
+        run: echo ${{ steps.capitalization.outputs.lowercase }}
+----

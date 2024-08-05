@@ -1,0 +1,19 @@
+name: Capitalize string
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  capitalize-string:
+    name: Capitalize string
+    runs-on: ubuntu-latest
+    steps:
+      - id: capitalization
+        name: Change string case
+        uses: ./change-string-case
+        with:
+          input: TEST input Value
+      - id: output
+        run: echo ${{ steps.capitalization.outputs.capitalized }}
