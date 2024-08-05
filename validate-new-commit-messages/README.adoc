@@ -1,0 +1,18 @@
+= Validate new commit messages
+
+This action validates the format of commit messages for commits added since the last push.
+
+Commit messages are expected to follow this format:
+
+----
+<type>: <subject>
+----
+
+Where `<type>` is one of the following:
+
+* `constraint`
+* `feature`
+* `fix`
+* `maintenance`
+* `merge`
+* `refactor`
