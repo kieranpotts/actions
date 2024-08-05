@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 
 try {
-    const inputStr = core.getInput('string');
+    const inputStr = core.getInput('input');
     console.log(`Manipulating string: ${inputStr}`);
 
     const lowercase = inputStr.toLowerCase();
