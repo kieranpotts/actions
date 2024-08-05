@@ -16,3 +16,27 @@ Where `<type>` is one of the following:
 * `maintenance`
 * `merge`
 * `refactor`
+
+== Usage
+
+[source,yaml]
+----
+name: Commit validation
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  validate-commit-messages:
+    name: Validate commit messages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Validate new commit messages
+        uses: kieranpotts/actions/validate-new-commit-messages@dev
+----
