@@ -21,8 +21,8 @@ runs:
   using: composite
   steps:
     - if: inputs.ip
-      run: echo "${{ inputs.ip }} ${{ inputs.host }}" | tee -a  ${{ inputs.hosts-file }}
+      run: echo "${{ inputs.ip }} ${{ inputs.host }}" | sudo tee -a  ${{ inputs.hosts-file }}
       shell: sh
     - if: inputs.cname
-      run: echo "$(getent ahosts ${{ inputs.cname }} | awk '{ print $1; exit }') ${{ inputs.host }}" | tee -a  ${{ inputs.hosts-file }}
+      run: echo "$(getent ahosts ${{ inputs.cname }} | awk '{ print $1; exit }') ${{ inputs.host }}" | sudo tee -a  ${{ inputs.hosts-file }}
       shell: sh
