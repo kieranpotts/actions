@@ -36,5 +36,4 @@ jobs:
     steps:
 
       - name: Print hosts file
-        run: cat /etc/hosts
-
+        run: cat /etc/hosts && cat /etc/hosts1
