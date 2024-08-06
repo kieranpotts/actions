@@ -10,7 +10,7 @@ inputs:
     description: The IP address to associate with the host name
     type: string
   cname:
-    description: The CNAME to use for the IP address
+    description: The CNAME to use in place of the IP address
     type: string
   hosts-file:
     description: The path to the hosts file
