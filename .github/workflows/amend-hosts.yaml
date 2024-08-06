@@ -1,0 +1,36 @@
+name: Amend hosts
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  amend-hosts:
+    name: Amend hosts
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repository - this is required because the action is local.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: amend-hosts
+        name: Amend hosts file
+        uses: ./hosts-entry
+        with:
+          host: localhost
+          ip: 192.168.1.1
+          cname: example.com
+          hosts-file: /etc/hosts
+
+  print-hosts:
+    name: Print hosts
+    runs-on: ubuntu-latest
+    needs:
+      - amend-hosts
+    steps:
+
+      - name: Print hosts file
+        run: cat /etc/hosts
+
