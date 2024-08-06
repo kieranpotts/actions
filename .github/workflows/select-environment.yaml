@@ -1,0 +1,30 @@
+name: Lint SSL config
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'The deployment environment'
+        required: true
+        default: dev
+
+jobs:
+  select-env:
+    name: Select a deployment environment
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repository - this is required because the action is local.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: select-host
+        uses: ./select-from
+        with:
+          select: ${{ inputs.env }}
+          from: |
+            dev=development
+            test=staging
+            prod=production
+      - run: |
+          echo "Selected environment: ${{ steps.select-host.outputs.value }}"
