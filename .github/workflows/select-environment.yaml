@@ -1,4 +1,4 @@
-name: Lint SSL config
+name: Select environment
 
 on:
   workflow_dispatch:
