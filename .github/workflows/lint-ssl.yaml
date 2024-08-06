@@ -1,0 +1,32 @@
+name: Lint SSL config
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: The URL to scan with SSLyze
+        required: true
+      config:
+        description: Benchmark the URL against one of Mozilla's SSL/TLS configuration recommendations
+        type: choice
+        options:
+          - modern
+          - intermediate
+          - old
+        default: intermediate
+
+jobs:
+  lint-ssl:
+    name: Lint SSL config
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repository - this is required because the action is local.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run SSLyze action
+        uses: ./sslyze
+        with:
+          url: ${{ inputs.url }}
+          config: ${{ inputs.config }}
