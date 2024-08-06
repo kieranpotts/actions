@@ -1,0 +1,16 @@
+name: Select from
+description: Select a value from a list of options
+
+inputs:
+  select:
+    description: The item to select
+    required: true
+  from:
+    description: The list of values to select from, in the formal key=value
+    required: true
+  default:
+    description: The default value
+
+runs:
+  using: node20
+  main: index.js
