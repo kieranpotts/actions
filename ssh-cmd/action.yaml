@@ -1,0 +1,16 @@
+name: SSH command
+description: Run a command over SSH
+
+inputs:
+  host:
+    type: string
+    required: true
+  command:
+    type: string
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - run: ssh ${{ inputs.host }} ${{ inputs.command }}
+      shell: bash

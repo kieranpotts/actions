@@ -1,0 +1,33 @@
+# SSH Command
+
+Run a script over SSH.
+
+== Inputs
+
+[Attributes]
+|===
+|Name |Type |Default |Description
+
+|host
+|string
+|
+|The host string
+
+|command
+|string
+|
+|The command string
+|===
+
+== Usage
+
+[source,yaml]
+----
+runs:
+  using: composite
+  steps:
+    - uses: kieranpotts/actions/ssh-cmd@dev
+      with:
+        host: user@some.hostname.com
+        command: echo "Hello, world!"
+----
