@@ -1,0 +1,20 @@
+# JSON schema validator
+
+This action validates a JSON file against a JSON schema.
+
+== Inputs
+
+[Attributes]
+|===
+|Name |Type |Default |Description
+
+|file
+|string
+|
+|Space-delimited list of JSON files to validate
+
+|schema
+|string
+|./schema.json
+|The schema file to use for validation
+|===

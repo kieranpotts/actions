@@ -1,0 +1,19 @@
+name: JSON validate
+description: Validate a JSON file using a schema
+
+inputs:
+  file:
+    description: Space-delimited list of JSON files to validate
+    type: string
+    required: true
+  schema:
+    description: Path to the schema file to use for validation
+    type: string
+    default: ./schema.json
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
+    - ${{ inputs.schema }}
