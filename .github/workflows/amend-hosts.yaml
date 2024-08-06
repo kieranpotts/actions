@@ -26,7 +26,7 @@ jobs:
         with:
           host: example.local
           cname: example.com
-          hosts-file: /etc/hosts
+          hosts-file: /etc/hosts1
 
   print-hosts:
     name: Print hosts
