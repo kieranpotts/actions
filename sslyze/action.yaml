@@ -1,0 +1,31 @@
+name: SSLyze
+description: Run SSLyze against a target
+
+inputs:
+  url:
+    description: The URL to scan with SSLyze
+    required: true
+  config:
+    description: Benchmark the URL against one of Mozilla's SSL/TLS configuration recommendations
+    options:
+      - modern
+      - intermediate
+      - old
+    default: intermediate
+
+runs:
+  using: composite
+  steps:
+    - name: Check URL is not empty
+      if: inputs.url == ''
+      run: |
+        echo "URL is required"
+        exit 1
+      shell: bash
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - run: pip install sslyze
+      shell: bash
+    - run: python -m sslyze --mozilla_config=${{ inputs.config }} ${{ inputs.url }}
+      shell: bash
