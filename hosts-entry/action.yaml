@@ -1,0 +1,28 @@
+name: Hosts entry
+description: Add an entry to the hosts file
+
+inputs:
+  host:
+    description: The host name to add to the hosts file
+    type: string
+    required: true
+  ip:
+    description: The IP address to associate with the host name
+    type: string
+  cname:
+    description: The CNAME to use for the IP address
+    type: string
+  hosts-file:
+    description: The path to the hosts file
+    type: string
+    default: /etc/hosts
+
+runs:
+  using: composite
+  steps:
+    - if: inputs.ip
+      run: echo "${{ inputs.ip }} ${{ inputs.host }}" | tee -a  ${{ inputs.hosts-file }}
+      shell: sh
+    - if: inputs.cname
+      run: echo "$(getent ahosts ${{ inputs.cname }} | awk '{ print $1; exit }') ${{ inputs.host }}" | tee -a  ${{ inputs.hosts-file }}
+      shell: sh
