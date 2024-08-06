@@ -1,0 +1,33 @@
+name: Validate JSON data
+
+on:
+  workflow_dispatch:
+    inputs:
+      file:
+        description: Path to the JSON file to validate
+        type: string
+        required: true
+        default: ./_/data.json
+      schema:
+          description: Path to the JSON schema file to use for validation
+          type: string
+          required: true
+          default: ./_/schema.json
+
+jobs:
+  validate-json:
+    name: Validate JSON data
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout the repository - this is required because the action is local.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - id: validate-json
+        uses: ./json-validate
+        with:
+          file: ${{ inputs.file }}
+          schema: ${{ inputs.schema }}
+      - run: |
+          echo "Validation result: ${{ steps.validate-json.outputs.result }}"
