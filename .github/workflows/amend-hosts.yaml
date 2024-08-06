@@ -15,17 +15,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Amend hosts file (simple)
+      - name: Amend hosts file (ip)
         uses: ./hosts-entry
         with:
-          host: localhost
-          ip: 192.168.1.1
+          host: example.local
+          ip: 127.0.0.2
 
-      - name: Amend hosts file (advanced)
+      - name: Amend hosts file (cname)
         uses: ./hosts-entry
         with:
-          host: localhost
-          ip: 192.168.1.1
+          host: example.local
           cname: example.com
           hosts-file: /etc/hosts
 
