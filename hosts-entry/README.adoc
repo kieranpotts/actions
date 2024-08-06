@@ -27,4 +27,9 @@ This action adds a host entry to the `hosts` file.
 |string
 |/etc/hosts
 |Path to the hosts file
+
+|comment
+|string
+|
+|An optional comment to add to the hosts file
 |===

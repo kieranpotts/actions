@@ -18,15 +18,16 @@ jobs:
       - name: Amend hosts file (ip)
         uses: ./hosts-entry
         with:
+          comment: "Custom hosts entry (ip)"
           host: example.local
           ip: 127.0.0.2
 
       - name: Amend hosts file (cname)
         uses: ./hosts-entry
         with:
+          comment: "Custom hosts entry (cname)"
           host: example.local
           cname: example.com
-          hosts-file: /etc/hosts1
 
       - name: Print hosts file
-        run: cat /etc/hosts && cat /etc/hosts1
+        run: cat /etc/hosts

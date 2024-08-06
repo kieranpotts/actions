@@ -16,13 +16,22 @@ inputs:
     description: The path to the hosts file
     type: string
     default: /etc/hosts
+  comment:
+    description: An optional comment to add to the hosts file
+    type: string
 
 runs:
   using: composite
   steps:
+
+    - if: inputs.comment
+      run: echo "\n# ${{ inputs.comment }}" | sudo tee -a  ${{ inputs.hosts-file }}
+      shell: sh
+
     - if: inputs.ip
       run: echo "${{ inputs.ip }} ${{ inputs.host }}" | sudo tee -a  ${{ inputs.hosts-file }}
       shell: sh
+
     - if: inputs.cname
       run: echo "$(getent ahosts ${{ inputs.cname }} | awk '{ print $1; exit }') ${{ inputs.host }}" | sudo tee -a  ${{ inputs.hosts-file }}
       shell: sh
