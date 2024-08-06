@@ -29,5 +29,3 @@ jobs:
         with:
           file: ${{ inputs.file }}
           schema: ${{ inputs.schema }}
-      - run: |
-          echo "Validation result: ${{ steps.validate-json.outputs.result }}"
