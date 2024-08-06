@@ -41,7 +41,7 @@ This action selects a value from a list of key/value pairs, so the value can be 
 [source,yaml]
 ----
 steps:
-  - id: select-host
+  - id: select-environment
     uses: kieranpotts/actions/select-from@dev
     with:
       select: ${{ inputs.environment }}
@@ -49,5 +49,5 @@ steps:
         dev=development
         test=staging
         prod=production
-  - run: echo "Selected environment: ${{ steps.select-host.outputs.value }}"
+  - run: echo "Selected environment: ${{ steps.select-environment.outputs.value }}"
 ----
