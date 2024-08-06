@@ -4,7 +4,7 @@ const core = require('@actions/core')
 
 async function main() {
   try {
-    let outputValue = core.getInput('default')
+    let outputValue = core.getInput('default') ?? null
 
     const select = core.getInput('select')
     const from = core.getInput('from')
