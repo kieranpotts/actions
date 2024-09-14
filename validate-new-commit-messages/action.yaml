@@ -17,7 +17,7 @@ runs:
 
         git log --format=%s ${{ github.event.before }}..${{ github.sha }} | while read -r line; do
           echo "Validating commit message: '$line'"
-          if [[ ! $line =~ ^((constraint|feature|fix|maintenance|refactor|release): [a-z].*)$ ]]; then
+          if [[ ! $line =~ ^((feature|fix|maintenance|refactor|release): [a-z].*)$ ]]; then
             echo "Invalid commit message: '$line'"
             exit 1
           fi
