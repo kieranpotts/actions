@@ -28,7 +28,7 @@ runs:
         done
       shell: bash
     - name: Validate branches
-      if: inputs.trunk === 'false'
+      if: inputs.trunk == 'false'
       run: |
         git log --format=%s ${{ github.event.before }}..${{ github.sha }} | while read -r line; do
           echo "Validating commit message on branch: '$line'"
