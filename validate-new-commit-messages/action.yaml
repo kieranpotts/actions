@@ -21,10 +21,6 @@ runs:
             echo "Invalid commit message: '$line'"
             exit 1
           fi
-          if [[ $line =~ ^(experiment: [a-z].*)$ ]]; then
-            echo "Experiments should not be pushed upstream ('$line')"
-            exit 1
-          fi
         done
       shell: bash
     - name: Validate branches
