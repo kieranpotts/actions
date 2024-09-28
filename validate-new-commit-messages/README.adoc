@@ -39,4 +39,6 @@ jobs:
           fetch-depth: 0
       - name: Validate new commit messages
         uses: kieranpotts/actions/validate-new-commit-messages@dev
+        with:
+          trunk: true
 ----

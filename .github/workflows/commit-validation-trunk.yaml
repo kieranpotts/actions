@@ -1,12 +1,4 @@
-= GitHub Actions
-
-My custom actions for reuse in GitHub Actions CI/CD pipelines.
-
-== Usage
-
-[source,yaml]
-----
-name: Commit validation
+name: Commit validation (trunk)
 
 on:
   push:
@@ -15,15 +7,18 @@ on:
 
 jobs:
   validate-commit-messages:
-    name: Validate commit messages
+    name: Validate commit messages on trunk
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout the repository and fetch its full log history.
+      # https://github.com/actions/checkout?tab=readme-ov-file#fetch-all-history-for-all-tags-and-branches
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Validate new commit messages
         uses: kieranpotts/actions/validate-new-commit-messages@dev
         with:
           trunk: true
-----
