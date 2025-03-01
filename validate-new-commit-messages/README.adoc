@@ -10,12 +10,16 @@ Commit messages are expected to follow this format:
 
 Where `<type>` is one of the following:
 
-* `constraint`
 * `feature`
+* `performance`
 * `fix`
-* `maintenance`
-* `merge`
+* `dev`
 * `refactor`
+* `maintenance`
+* `chore`
+* `release`
+* `merge`
+* `revert`
 
 == Usage
 
@@ -30,7 +34,7 @@ on:
 
 jobs:
   validate-commit-messages:
-    name: Validate commit messages
+    name: Validate commit messages on the trunk
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -39,6 +43,4 @@ jobs:
           fetch-depth: 0
       - name: Validate new commit messages
         uses: kieranpotts/actions/validate-new-commit-messages@dev
-        with:
-          trunk: true
 ----

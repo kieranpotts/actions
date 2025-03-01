@@ -1,34 +1,14 @@
 name: Validate new commit messages
 description: This action validates the format of commit messages for commits added since the last push.
 
-inputs:
-  trunk:
-    description: Is this being run on mainline branches?
-    default: "true"
-
 runs:
   using: composite
   steps:
-    - name: Validate trunks
-      if: inputs.trunk == 'true'
-      run: |
-        # Equivalent to `git log ORIG_HEAD..HEAD`.
-        # `github.event.before` is the last commit SHA before the push.
-
-        git log --format=%s ${{ github.event.before }}..${{ github.sha }} | while read -r line; do
-          echo "Validating commit message on trunk: '$line'"
-          if [[ ! $line =~ ^((constraint|feature|fix|maintenance|refactor|release): [a-z].*)$ ]]; then
-            echo "Invalid commit message: '$line'"
-            exit 1
-          fi
-        done
-      shell: bash
-    - name: Validate branches
-      if: inputs.trunk == 'false'
+    - name: Validate commit messages
       run: |
         git log --format=%s ${{ github.event.before }}..${{ github.sha }} | while read -r line; do
           echo "Validating commit message on branch: '$line'"
-          if [[ ! $line =~ ^((experiment|merge|wip): [a-z].*)$ ]]; then
+          if [[ ! $line =~ ^((chore|dev|feature|fix|maintenance|merge|performance|refactor|release|revert): [a-z].*)$ ]]; then
             echo "Invalid commit message: '$line'"
             exit 1
           fi
