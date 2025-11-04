@@ -1,5 +1,5 @@
-name: Validate new commit messages
-description: This action validates the format of commit messages for commits added since the last push.
+name: Validate commits
+description: This action validates the format of new commit messages.
 
 runs:
   using: composite
