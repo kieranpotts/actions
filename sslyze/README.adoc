@@ -1,6 +1,6 @@
 = SSLyze
 
-Scan a URL with SSLyze. See link:https://pypi.org/project/sslyze/[the project page] on PyPI for more information.
+Scan a URL with SSLyze. See https://pypi.org/project/sslyze/[the project page] on PyPI for more information.
 
 == Inputs
 

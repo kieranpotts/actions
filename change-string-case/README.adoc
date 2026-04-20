@@ -6,7 +6,7 @@ This action accepts any string, and outputs three different versions of it, whic
 * uppercase (`XyZzY` → `XYZZY`)
 * capitalized (`XyZzY` → `Xyzzy`)
 
-This action is a fork of link:https://github.com/ASzc/change-string-case-action/[Alex Szczuczko's change-string-case-action].
+This action is a fork of https://github.com/ASzc/change-string-case-action/[Alex Szczuczko's change-string-case-action].
 
 == Inputs
 
