@@ -1,5 +1,5 @@
 name: Validate commits
-description: This action validates the format of new commit messages.
+description: This action validates the format of new commit messages. Intended for use only with code repositories, not documentation repositories.
 
 runs:
   using: composite
@@ -9,7 +9,7 @@ runs:
       id: log
       run: |
         git_log_output=$(git log --format=%s "${BASE_SHA:-$BEFORE_SHA}...${HEAD_SHA:-$GITHUB_REF}")
-        
+
         echo "::notice::Changed files: $git_log_output"
 
         {
@@ -22,12 +22,12 @@ runs:
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         BEFORE_SHA: "${{ github.event.before }}"
       shell: bash
-        
+
     - name: Validate new commit messages
       run: |
         echo "$GIT_LOG_OUTPUT" | while read -r line; do
           echo "Validating commit message on branch: '$line'"
-          if [[ ! $line =~ ^((add|chore|edit|feature|fix|format|maintenance|merge|performance|refactor|release|remove|restructure|revert|step): [a-z].*)$ ]]; then
+          if [[ ! $line =~ ^((chore|feature|fix|format|maintenance|merge|performance|refactor|release|revert|step): [a-z].*)$ ]]; then
             echo "Invalid commit message: '$line'"
             exit 1
           fi
