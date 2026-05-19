@@ -1,11 +1,10 @@
-= GitHub Actions
+# GitHub Actions
 
 My custom actions for reuse in GitHub Actions CI/CD pipelines.
 
-== Usage
+## Usage
 
-[source,yaml]
-----
+```yaml
 name: Commit validation
 
 on:
@@ -19,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Validate new commit messages
         uses: kieranpotts/actions/validate-commits@dev
-----
+```

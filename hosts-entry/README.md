@@ -1,0 +1,13 @@
+# Hosts entry
+
+This action adds a host entry to the `hosts` file.
+
+## Inputs
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| host | string | | The host name |
+| ip | string | | The IP address |
+| cname | string | | The hostname to use as a CNAME |
+| hosts-file | string | /etc/hosts | Path to the hosts file |
+| comment | string | | An optional comment to add to the hosts file |

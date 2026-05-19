@@ -2,27 +2,16 @@
 
 Run a script over SSH.
 
-== Inputs
+## Inputs
 
-[Attributes]
-|===
-|Name |Type |Default |Description
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| host | string | | The host string |
+| command | string | | The command string |
 
-|host
-|string
-|
-|The host string
+## Usage
 
-|command
-|string
-|
-|The command string
-|===
-
-== Usage
-
-[source,yaml]
-----
+```yaml
 runs:
   using: composite
   steps:
@@ -30,4 +19,4 @@ runs:
       with:
         host: user@some.hostname.com
         command: echo "Hello, world!"
-----
+```
