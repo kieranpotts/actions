@@ -1,0 +1,36 @@
+name: Stale issues
+description: Labels open issues that have exceeded configurable age thresholds, and posts an optional comment on first crossing each threshold.
+
+inputs:
+  token:
+    description: GitHub token with issues read/write permission. Pass `secrets.GITHUB_TOKEN`.
+    required: true
+  threshold-1:
+    description: Number of days before the first warning label is applied.
+    default: '90'
+  threshold-2:
+    description: Number of days before the second warning label is applied. Leave unset to disable.
+  threshold-3:
+    description: Number of days before the third warning label is applied. Leave unset to disable.
+  label-1:
+    description: Label name to apply at the first threshold.
+    default: 'age: 3 months'
+  label-2:
+    description: Label name to apply at the second threshold.
+    default: 'age: 6 months'
+  label-3:
+    description: Label name to apply at the third threshold.
+    default: 'age: 12 months'
+  comment-1:
+    description: Comment body to post at the first threshold. Leave empty to skip commenting.
+    default: ''
+  comment-2:
+    description: Comment body to post at the second threshold. Leave empty to skip commenting.
+    default: ''
+  comment-3:
+    description: Comment body to post at the third threshold. Leave empty to skip commenting.
+    default: ''
+
+runs:
+  using: node20
+  main: index.js
