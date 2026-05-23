@@ -22,5 +22,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Validate new commit messages
-        uses: kieranpotts/actions/validate-commits@dev
+        uses: kieranpotts/actions/validate-commit-messages@dev
 ```
