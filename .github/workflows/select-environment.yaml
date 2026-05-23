@@ -1,3 +1,7 @@
+#
+# Used to test the select-from action.
+#
+
 name: Select environment
 
 on:

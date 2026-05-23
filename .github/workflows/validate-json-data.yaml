@@ -1,3 +1,7 @@
+#
+# Used to test the json-validate action.
+#
+
 name: Validate JSON data
 
 on:

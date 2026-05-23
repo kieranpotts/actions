@@ -1,3 +1,7 @@
+#
+# Used to test the hosts-entry action.
+#
+
 name: Amend hosts
 
 on:

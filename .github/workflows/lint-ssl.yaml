@@ -1,3 +1,7 @@
+#
+# Used to test the sslyze action.
+#
+
 name: Lint SSL config
 
 on:

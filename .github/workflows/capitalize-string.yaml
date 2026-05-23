@@ -1,3 +1,7 @@
+#
+# Used to test the change-string-case action.
+#
+
 name: Capitalize string
 
 on:

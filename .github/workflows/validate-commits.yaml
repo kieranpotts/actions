@@ -1,4 +1,8 @@
-name: Commit validation (trunk)
+#
+# Used to test the validate-commits action.
+#
+
+name: Validate commits on trunk
 
 on:
   push:
@@ -19,4 +23,4 @@ jobs:
           fetch-depth: 0
 
       - name: Validate new commit messages
-        uses: kieranpotts/actions/validate-commits@dev
+        uses: ./validate-commits
