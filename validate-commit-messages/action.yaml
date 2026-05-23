@@ -1,5 +1,5 @@
-name: Validate commits
-description: This action validates the format of new commit messages. Intended for use only with code repositories, not documentation repositories.
+name: Validate commit messages
+description: This action validates the format of new commit messages.
 
 runs:
   using: composite

@@ -1,4 +1,4 @@
-# Validate new commit messages
+# Validate commit messages
 
 This action validates the format of commit messages. The action checks all commits added since the last push.
 
@@ -26,10 +26,12 @@ Where `<type>` is one of the following:
 - `merge`: Merge commits (when not fast-forwarded away).
 - `revert`: Reverting a prior commit.
 
+I've also published a [pre-commit-hook](https://github.com/kieranpotts/pre-commit-hooks/blob/dev/hooks/validate_commit_message.py), compatible with the [pre-commit framework](https://pre-commit.com/), that does the same checks at time of commit.
+
 ## Usage
 
 ```yaml
-name: Commit validation
+name: Validate commit messages
 
 on:
   push:
@@ -46,5 +48,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Validate new commit messages
-        uses: kieranpotts/actions/validate-commits@dev
+        uses: kieranpotts/actions/validate-commit-messages@dev
 ```
