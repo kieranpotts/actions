@@ -26,19 +26,6 @@ Where `<type>` is one of the following:
 - `merge`: Merge commits (when not fast-forwarded away).
 - `revert`: Reverting a prior commit.
 
-**Alternative revision types (for documentation/non-executable repositories)**:
-
-- `add`: Introduces new content (documents, sections, substantial new material).
-- `edit`: Improves existing content (rewrites, expansions, clarifications, refreshes).
-- `fix`: Corrects typos, grammatical errors, broken links, factual mistakes.
-- `remove`: Deletes outdated or redundant content.
-- `restructure`: Reorganizes, reorders, or renames content without changing meaning.
-- `format`: Presentation-only changes to markup or styling.
-- `chore`: Repository housekeeping (CI config, tooling, ignore files).
-- `release`: Version bumps and release-preparation commits.
-- `merge`: Merge commits.
-- `revert`: Reverting a prior commit.
-
 ## Usage
 
 ```yaml
