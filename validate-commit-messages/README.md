@@ -15,7 +15,7 @@ Where `<type>` is one of the following:
 **Standard revision types (for code/executable repositories)**:
 
 - `feature`: User-facing operation or behavior change.
-- `performance`: External runtime optimization.
+- `runtime`: Change to a dynamic quality attribute (latency, availability, security, etc.), observable outside the system.
 - `fix`: Defect resolution (bug, regression, vulnerability, incident).
 - `step`: Incremental change toward a larger feature or fix (not yet user-facing).
 - `refactor`: Improvement to internal structure without behavioral change.
