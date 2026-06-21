@@ -21,7 +21,7 @@ This action selects a value from a list of key/value pairs, so the value can be 
 ```yaml
 steps:
   - id: select-environment
-    uses: kieranpotts/actions/select-from@dev
+    uses: kieranpotts/actions/select-from@latest/dev
     with:
       select: ${{ inputs.environment }}
       from: |

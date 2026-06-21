@@ -15,7 +15,7 @@ Run a script over SSH.
 runs:
   using: composite
   steps:
-    - uses: kieranpotts/actions/ssh-cmd@dev
+    - uses: kieranpotts/actions/ssh-cmd@latest/dev
       with:
         host: user@some.hostname.com
         command: echo "Hello, world!"

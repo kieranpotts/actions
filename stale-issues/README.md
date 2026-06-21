@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for stale issues
-        uses: kieranpotts/actions/stale-issues@dev
+        uses: kieranpotts/actions/stale-issues@latest/dev
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -51,7 +51,7 @@ With custom thresholds and labels:
 
 ```yaml
       - name: Check for stale issues
-        uses: kieranpotts/actions/stale-issues@dev
+        uses: kieranpotts/actions/stale-issues@latest/dev
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           threshold-1: '60'

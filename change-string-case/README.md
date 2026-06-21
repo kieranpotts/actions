@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: capitalization
-        uses: kieranpotts/actions/change-string-case@dev
+        uses: kieranpotts/actions/change-string-case@latest/dev
         with:
           input: INPUT VALUE TO CAPITALIZE
       - id: output

@@ -13,7 +13,7 @@ Scan a URL with SSLyze. See [the project page](https://pypi.org/project/sslyze/)
 
 ```yaml
 steps:
-  - uses: kieranpotts/actions/sslyze@dev
+  - uses: kieranpotts/actions/sslyze@latest/dev
     with:
       url: https://example.com
       config: modern

@@ -48,5 +48,5 @@ jobs:
         with:
           fetch-depth: 0
       - name: Validate new commit messages
-        uses: kieranpotts/actions/validate-commit-messages@dev
+        uses: kieranpotts/actions/validate-commit-messages@latest/dev
 ```
