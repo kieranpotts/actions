@@ -2,7 +2,7 @@
 # Used to test the change-string-case action.
 #
 
-name: Capitalize string
+name: Capitalize String
 
 on:
   push:

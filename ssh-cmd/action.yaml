@@ -1,4 +1,4 @@
-name: SSH command
+name: SSH Command
 description: Run a command over SSH
 
 inputs:

@@ -1,4 +1,4 @@
-name: Stale issues
+name: Stale Issues
 description: Labels open issues that have exceeded configurable age thresholds, and posts an optional comment on first crossing each threshold.
 
 inputs:

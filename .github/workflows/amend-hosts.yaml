@@ -2,7 +2,7 @@
 # Used to test the hosts-entry action.
 #
 
-name: Amend hosts
+name: Amend Hosts
 
 on:
   push:

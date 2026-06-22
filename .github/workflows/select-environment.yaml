@@ -2,7 +2,7 @@
 # Used to test the select-from action.
 #
 
-name: Select environment
+name: Select Environment
 
 on:
   workflow_dispatch:

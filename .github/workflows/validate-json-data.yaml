@@ -2,7 +2,7 @@
 # Used to test the json-validate action.
 #
 
-name: Validate JSON data
+name: Validate JSON Data
 
 on:
   workflow_dispatch:

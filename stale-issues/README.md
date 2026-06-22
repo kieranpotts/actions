@@ -25,7 +25,7 @@ Age is measured from when the issue was created (`created_at`). The action is id
 
 Labels are created automatically if they do not already exist in the repository.
 
-Comments are optional. If a threshold is configured with a corresponding comment, the comment will be added to the issue's thread when the theshold is passed.
+Comments are optional. If a threshold is configured with a corresponding comment, the comment will be added to the issue's thread when the threshold is passed.
 
 ## Usage
 

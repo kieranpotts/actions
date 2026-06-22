@@ -2,7 +2,7 @@
 # Used to test the validate-commit-messages action.
 #
 
-name: Validate commits on trunk
+name: Validate Commits on Trunk
 
 on:
   push:

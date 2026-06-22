@@ -1,4 +1,4 @@
-name: Hosts entry
+name: Hosts Entry
 description: Add an entry to the hosts file
 
 inputs:

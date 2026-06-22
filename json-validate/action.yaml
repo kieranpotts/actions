@@ -1,4 +1,4 @@
-name: JSON validate
+name: JSON Validate
 description: Validate a JSON file using a schema
 
 inputs:

@@ -2,7 +2,7 @@
 # Used to test the sslyze action.
 #
 
-name: Lint SSL config
+name: Lint SSL Config
 
 on:
   workflow_dispatch:

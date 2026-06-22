@@ -1,4 +1,4 @@
-name: Validate commit messages
+name: Validate Commit Messages
 description: This action validates the format of new commit messages.
 
 runs:
