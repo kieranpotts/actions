@@ -1,7 +1,5 @@
-'use strict'
-
-const core = require('@actions/core')
-const github = require('@actions/github')
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
 /**
  * @typedef {Object} Threshold
