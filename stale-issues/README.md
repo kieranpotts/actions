@@ -36,6 +36,9 @@ on:
   schedule:
     - cron: '0 9 * * 1'  # Every Monday at 09:00 UTC.
 
+permissions:
+  issues: write
+
 jobs:
   stale-issues:
     name: Check for stale issues
