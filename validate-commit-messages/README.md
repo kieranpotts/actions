@@ -19,12 +19,19 @@ Where `<type>` is one of the following:
 - `fix`: Defect resolution (bug, regression, vulnerability, incident).
 - `step`: Incremental change toward a larger feature or fix (not yet user-facing).
 - `refactor`: Improvement to internal structure without behavioral change.
-- `format`: Presentation-only code changes (whitespace, style).
+- `style`: Presentation-only code changes (whitespace, formatter runs).
 - `maintenance`: Required upkeep (dependencies, CI, documentation, security patches).
 - `chore`: Small, insignificant housekeeping.
 - `release`: Version bumps and release-preparation commits.
 - `merge`: Merge commits (when not fast-forwarded away).
 - `revert`: Reverting a prior commit.
+
+**Extended revision types (for non-executable content repositories)**, usable
+in conjunction with the standard set above:
+
+- `create`: New content — new documents, sections, or substantial new material.
+- `update`: Edits to existing content.
+- `delete`: Removal of outdated or redundant content.
 
 I've also published a [pre-commit-hook](https://github.com/kieranpotts/pre-commit-hooks/blob/dev/hooks/validate_commit_message.py), compatible with the [pre-commit framework](https://pre-commit.com/), that does the same checks at time of commit.
 
