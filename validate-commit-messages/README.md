@@ -14,10 +14,10 @@ Where `<type>` is one of the following:
 
 **Standard revision types (for code/executable repositories)**:
 
-- `feature`: User-facing operation or behavior change.
-- `runtime`: Change to a dynamic quality attribute (latency, availability, security, etc.), observable outside the system.
+- `behavior`: User-facing operation change.
+- `quality`: Change to a dynamic quality attribute (latency, availability, security, etc.), observable outside the system.
 - `fix`: Defect resolution (bug, regression, vulnerability, incident).
-- `step`: Incremental change toward a larger feature or fix (not yet user-facing).
+- `step`: Incremental change toward a larger behavior change or fix (not yet user-facing).
 - `refactor`: Improvement to internal structure without behavioral change.
 - `style`: Presentation-only code changes (whitespace, formatter runs).
 - `maintenance`: Required upkeep (dependencies, CI, documentation, security patches).
