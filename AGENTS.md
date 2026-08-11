@@ -47,8 +47,8 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 - MUST follow the commit message format enforced by
   `validate-commit-messages` and `.pre-commit-config.yaml`: `<type>:
   <description>`, where `<type>` is one of `chore`, `feature`, `fix`,
-  `maintenance`, `merge`, `refactor`, `release`, `revert`, `runtime`,
-  `step`, `style`.
+  `maintenance`, `merge`, `refactor`, `revert`, `runtime`,
+  `step`, `style`, `version`.
 
 ## References
 

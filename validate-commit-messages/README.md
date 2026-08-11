@@ -22,7 +22,7 @@ Where `<type>` is one of the following:
 - `style`: Presentation-only code changes (whitespace, formatter runs).
 - `maintenance`: Required upkeep (dependencies, CI, documentation, security patches).
 - `chore`: Small, insignificant housekeeping.
-- `release`: Version bumps and release-preparation commits.
+- `version`: Version bumps and release-preparation commits.
 - `merge`: Merge commits (when not fast-forwarded away).
 - `revert`: Reverting a prior commit.
 

@@ -27,7 +27,7 @@ runs:
       run: |
         echo "$GIT_LOG_OUTPUT" | while read -r line; do
           echo "Validating commit message on branch: '$line'"
-          if [[ ! $line =~ ^((behavior|chore|create|delete|fix|maintenance|merge|quality|refactor|release|revert|step|style|update): [a-z0-9].*)$ ]]; then
+          if [[ ! $line =~ ^((behavior|chore|create|delete|fix|maintenance|merge|quality|refactor|revert|step|style|update|version): [a-z0-9].*)$ ]]; then
             echo "Invalid commit message: '$line'"
             exit 1
           fi
