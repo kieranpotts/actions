@@ -11,11 +11,12 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 ## Tech stack
 
 - GitHub Actions (`action.yaml` metadata files).
-- Composite actions written in Bash (`change-string-case` uses a plain
-  shell/JS mix; most others are pure `composite` steps with inline `bash`).
+- Composite actions written in Bash. `change-string-case` uses a plain
+  shell/JS mix; most others are pure `composite` steps with inline `bash`.
 - `change-string-case`, `select-from`, and `stale-issues` are JavaScript
   actions using `@actions/core`, with dependencies checked into
-  `node_modules/` (no build step; `index.js` is run directly by Node).
+  `node_modules/`. There is no build step; `index.js` is run directly by
+  Node.
 - `json-validate` is a Docker container action: Python 3.8 (`validate.py` +
   `jsonschema`) wrapped in a `Dockerfile`/`entrypoint.sh`.
 - `pre-commit` (via [kieranpotts/pre-commit-hooks](https://github.com/kieranpotts/pre-commit-hooks))
@@ -23,12 +24,12 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 
 ## Project structure
 
-- **`change-string-case/`, `hosts-entry/`, `json-validate/`, `select-from/`,
-  `ssh-cmd/`, `sslyze/`, `stale-issues/`, `validate-commit-messages/`** \
+- `change-string-case/`, `hosts-entry/`, `json-validate/`, `select-from/`,
+  `ssh-cmd/`, `sslyze/`, `stale-issues/`, `validate-commit-messages/` \
   One action per directory. Each has its own `action.yaml` and `README.md`
   documenting its inputs/outputs/usage.
 
-- **`.github/workflows/`** \
+- `.github/workflows/` \
   One workflow per action, used to self-test/dogfood that action on this
   repo (e.g. `validate-commit-messages.yaml` runs
   `validate-commit-messages` against this repo's own commits).
@@ -53,7 +54,7 @@ SHOULD NOT, OPTIONAL, and MAY are to be interpreted as described in
 ## References
 
 This project follows Kieran Potts' technical standards. Read the relevant
-standard(s) below for the current task; their RFC 2119 rules MUST be
+standard(s) below for the current task. Their RFC 2119 rules MUST be
 followed unless explicitly overridden elsewhere in this file.
 
 - **[TS-9: Version Control](https://kieranpotts.com/standards/009)**
