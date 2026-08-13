@@ -2,7 +2,7 @@
 
 This action validates the format of commit messages. The action checks all commits added since the last push.
 
-Commit message conventions are defined in [TS-9: Version Control](https://github.com/kieranpotts/standards/tree/dev/src/009). Commit messages are expected to follow this format:
+Commit message conventions are defined in [TS-9: Version Control](https://kieranpotts.com/standards/009). Commit messages are expected to follow this format:
 
 ```
 <type>: <description>
